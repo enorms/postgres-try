@@ -1,0 +1,22 @@
+{
+  "name": "postgres-try",
+  "description": "try",
+  "image": "",
+  "repository": "https://github.com/enxyz/postgres-try",
+  "keywords": ["python", "django", "postgresql"],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
