@@ -35,6 +35,7 @@ heroku logs --tail
 
 Create tables to init db
 ```
+python manage.py migrate
 heroku run python manage.py migrate
 ```
 
@@ -46,7 +47,7 @@ python manage.py makemigrations
 python manage.py migrate
 # push changes
 
-heroku run manage.py makemigrations
+heroku run python manage.py makemigrations
 heroku run python manage.py migrate
 ```
 
@@ -81,7 +82,7 @@ heroku ps:scale web=1
 
 Reset database
 ```
-heroku pg:reset DATABASE_URL --confirm <database_name>
+heroku pg:reset DATABASE
 ```
 
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)
