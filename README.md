@@ -28,4 +28,16 @@ Check logs
 heroku logs --tail
 ```
 
+## Account commands
+
+Chech hours remaining
+```
+heroku ps
+```
+
+Shacle dyno up to 1
+```sh
+heroku ps:scale web=1
+```
+
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)
