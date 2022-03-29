@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "postgres_try",
+    "postgres-try",
 ]
 
 MIDDLEWARE = [
