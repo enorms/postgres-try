@@ -11,6 +11,11 @@ disable collect static files
 heroku config:set DISABLE_COLLECTSTATIC=1
 ```
 
+## Endpoints
+
+
+/db
+
 ## Commands
 
 Push to heroku
@@ -28,7 +33,34 @@ Check logs
 heroku logs --tail
 ```
 
+Create tables to init db
+```
+heroku run python manage.py migrate
+```
+
+## DB commands
+
+After making changes
+```
+python manage.py makemigrations
+```
+
 ## Account commands
+
+Show environment variables
+```
+heroku config
+```
+
+Show databases
+```
+heroku addons
+```
+
+Show postgres details
+```
+heroku pg
+```
 
 Chech hours remaining
 ```
