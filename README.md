@@ -5,11 +5,7 @@ Access data on a heroku instance.
 
 ## Setup
 
-if push heroku main failes
-disable collect static files
-```
-heroku config:set DISABLE_COLLECTSTATIC=1
-```
+
 
 ## Endpoints
 
@@ -33,6 +29,8 @@ Check logs
 heroku logs --tail
 ```
 
+If "relation "hello_greeting" does not exist" create 
+
 Create tables to init db
 ```
 python manage.py migrate
@@ -45,8 +43,6 @@ After making changes
 ```sh
 python manage.py makemigrations
 python manage.py migrate
-# push changes
-
 heroku run python manage.py makemigrations
 heroku run python manage.py migrate
 ```
@@ -77,6 +73,12 @@ Shacle dyno up to 1
 ```sh
 heroku ps:scale web=1
 ```
+
+# Trouble shooting
+
+If access db and a relation "<table_name>" does not exist error, because while the database is configured, the tables have not yet been created.
+To create the <table_name> table, run the standard Django manage.py migrate command: `heroku run python manage.py migrate`
+
 
 # CAUTION
 
