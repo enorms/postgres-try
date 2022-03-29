@@ -1,0 +1,21 @@
+# sayangel
+Host
+ec2-3-212-45-192.compute-1.amazonaws.com
+Database
+dfpepcvicmsta4
+User
+hwgowiqroobgjf
+Port
+5432
+Password
+51a027b9cfef25de62de2945463639ba0ab4b95cf3c2ea6c8c96c15cd48a13b8
+URI
+postgres://hwgowiqroobgjf:51a027b9cfef25de62de2945463639ba0ab4b95cf3c2ea6c8c96c15cd48a13b8@ec2-3-212-45-192.compute-1.amazonaws.com:5432/dfpepcvicmsta4
+Heroku CLI
+heroku pg:psql postgresql-round-09391 --app yc-gem-oracle
+
+
+
+# eric
+desolate-lake-08579
+https://desolate-lake-08579.herokuapp.com/ | https://git.heroku.com/desolate-lake-08579.git
