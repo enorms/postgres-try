@@ -43,8 +43,11 @@ heroku run python manage.py migrate
 After making changes
 ```sh
 python manage.py makemigrations
+python manage.py migrate
 # push changes
-heroku run python manage.py migrateheroku run python manage.py migrate
+
+heroku run manage.py makemigrations
+heroku run python manage.py migrate
 ```
 
 ## Account commands
@@ -72,6 +75,13 @@ heroku ps
 Shacle dyno up to 1
 ```sh
 heroku ps:scale web=1
+```
+
+# CAUTION
+
+Reset database
+```
+heroku pg:reset DATABASE_URL --confirm <database_name>
 ```
 
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)

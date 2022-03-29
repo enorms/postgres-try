@@ -1,5 +1,5 @@
 {
-  "name": "postgres-try",
+  "name": "postgrestry",
   "description": "try",
   "image": "",
   "repository": "https://github.com/enxyz/postgres-try",
