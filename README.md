@@ -41,8 +41,10 @@ heroku run python manage.py migrate
 ## DB commands
 
 After making changes
-```
+```sh
 python manage.py makemigrations
+# push changes
+heroku run python manage.py migrateheroku run python manage.py migrate
 ```
 
 ## Account commands
