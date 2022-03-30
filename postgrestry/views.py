@@ -9,9 +9,10 @@ from .models import Sign
 def index(request):
     return print("views > index()")
 
+i = 1
 def db(request):
-
-    sign = Sign()
+    i+=1
+    sign = Sign(gem_id = i, hackernews_username="hn_un", discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"})
     sign.save()
 
     sign = Sign.objects.all()
