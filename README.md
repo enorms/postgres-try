@@ -93,10 +93,13 @@ heroku pg:reset DATABASE
 
 Query / add
 ```sh
+hekoku run python manage.py shell
+
 from postgrestry.models import Sign
 from datetime import datetime as dt
 seconds = dt.now().second
-username = "enx"    # enx#123 causing URL trouble
+
+username = "enx1"    # enx#123 causing URL trouble
 sign = Sign(gem_id = seconds,
     hackernews_username="hnid",
     discord_username=username,
@@ -109,6 +112,10 @@ res = all.get(discord_username=username)
 res.discord_username
 
 ```
+
+potential errors with get
+    raise self.model.MultipleObjectsReturned(
+postgrestry.models.Sign.MultipleObjectsReturned: get() returned more than one Sign -- it returned 2!
 
 add an entry
 ```sh
