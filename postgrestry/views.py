@@ -32,7 +32,7 @@ def username(request, username):
     runs code, then sends output to html template with vars
     test whether we can call this via API
     """
-    print("db_with_param(), username:", username) # debug
+    print("username(), username:", username) # debug
     
     result = query_discord_username(username)
 
