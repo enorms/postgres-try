@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "postgrestry",
+    "simple"
 ]
 
 MIDDLEWARE = [
@@ -78,8 +79,15 @@ WSGI_APPLICATION = "postgrestry.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE" : "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+        "ENGINE" : "django.db.backends.postgresql",
+        "NAME": "dfpepcvicmsta4",
+        "HOST": "ec2-3-212-45-192.compute-1.amazonaws.com",
+        "USER": "sheoivbahrzzrs",
+        "PASSWORD": "e1b47aa3fd303bf9c67a57b208967cf38ef701831c849aa5e3e1410cb2a24f8d",
+        "PORT": "5432",
+        
+        
+
     }
 }
 
