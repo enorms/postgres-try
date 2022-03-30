@@ -15,7 +15,9 @@ def db(request):
     sign = Sign(gem_id = seconds, hackernews_username="hn_un", discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"})
     sign.save()
 
-    sign = Sign.objects.all()
+    print(sign) # debug
 
-    return render(request, "db.html", {"sign": sign})
+    signs = Sign.objects.all()
+
+    return render(request, "db.html", {"signs": signs})
     
