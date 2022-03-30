@@ -3,9 +3,13 @@ Methods to insert and query database
 
 Requirements: data base existst
 """
-
+import logging
 from datetime import datetime as dt
 from postgrestry.models import Sign
+
+
+# https://www.delftstack.com/howto/django/django-print-to-console/
+logging.basicConfig(level=logging.DEBUG) 
 
 
 def save_record(record):
@@ -36,13 +40,15 @@ def query_discord_username(username):
     Example of code return if not found:
         postgrestry.models.Sign.DoesNotExist: Sign matching query does not exist.
     """
+    logging.debug("query_discord_username(), username:", username)
+
 
     try: 
         res = all.get(hackernews_username=username)
-        print("found, gem id:", res.gem_id) # debug
+        logging.debug("found, gem id:", res.gem_id)
         return True
     except: 
-        print("not found")    # debug
+        logging.debug("not found")
         return False
 
 
