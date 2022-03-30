@@ -7,8 +7,16 @@ from django.db import models
 # https://docs.djangoproject.com/en/4.0/ref/models/fields/
 # https://www.postgresql.org/docs/8.1/datatype.html
 """
-sign = Sign(gem_id = 1, hackernews_username="hn_un", discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"}  )
+
+TODO: add default s
+
+from postgrestry.models import Sign
+sign = Sign(gem_id = 1, hackernews_username="hn_un", discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"})
+sign.save()
+Sign.objects.all()
+first = Sign.objects.get(pk=1)
 """
+
 class Sign(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     created_at = models.DateTimeField(auto_now_add=True)
