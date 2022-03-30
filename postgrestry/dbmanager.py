@@ -44,8 +44,9 @@ def query_discord_username(username):
 
 
     try: 
+        all = Sign.objects.all()
         res = all.get(hackernews_username=username)
-        logging.debug("found, gem id:", res.gem_id)
+        logging.debug("found, gem id:", str(res.gem_id))
         return True
     except: 
         logging.debug("not found")

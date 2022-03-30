@@ -13,6 +13,7 @@ def index(request):
     return print("views > index()")
 
 to_search = "dis_un2"
+hackernews_username = "hnid"
 def db(request):
     """
     res = all.filter(hackernews_username="hn_un2") # query set
@@ -20,10 +21,10 @@ def db(request):
     res.gem_id  # 29
     """
     seconds = dt.now().second
-    sign = Sign(gem_id = seconds, hackernews_username="hn_un", discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"})
+    sign = Sign(gem_id = seconds, hackernews_username=hackernews_username, discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"})
     sign.save()
 
-    logging.debug(sign)
+    logging.debug(str(sign))
 
     signs = Sign.objects.all()
 
@@ -36,11 +37,11 @@ def username(request, username):
     runs code, then sends output to html template with vars
     test whether we can call this via API
     """
-    logging.debug("username(), username:", username)
+    logging.debug("username(), username:", str(username))
     
     result = query_discord_username(username)
 
-    logging.debug(result)
+    logging.debug(str(result))
 
     return render(request, "username.html", {"result": result})
     

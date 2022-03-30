@@ -90,6 +90,26 @@ heroku pg:reset DATABASE
 
 # Scratch
 
+
+Query / add
+```sh
+from postgrestry.models import Sign
+from datetime import datetime as dt
+seconds = dt.now().second
+username = "enx"    # enx#123 causing URL trouble
+sign = Sign(gem_id = seconds,
+    hackernews_username="hnid",
+    discord_username=username,
+    wallet_address="0x345555",
+    message_payload={"test_key":"test_value"})
+sign.save()
+
+all = Sign.objects.all()
+res = all.get(discord_username=username)
+res.discord_username
+
+```
+
 add an entry
 ```sh
 (venv) e@en-mbp-14 postgres-try % heroku run python manage.py shell
