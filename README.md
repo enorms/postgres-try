@@ -33,7 +33,6 @@ If "relation "hello_greeting" does not exist" create
 
 Create tables to init db
 ```
-python manage.py migrate
 heroku run python manage.py migrate
 ```
 
@@ -41,8 +40,6 @@ heroku run python manage.py migrate
 
 After making changes
 ```sh
-python manage.py makemigrations
-python manage.py migrate
 heroku run python manage.py makemigrations
 heroku run python manage.py migrate
 ```

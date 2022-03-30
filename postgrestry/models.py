@@ -10,11 +10,11 @@ from django.db import models
 sign = Sign(gem_id = 1, hackernews_username="hn_un", discord_username="dis_un", wallet_address="0x345555",message_payload={"test_key":"test_value"}  )
 """
 class Sign(models.Model):
-    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False),
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False)
     created_at = models.DateTimeField(auto_now_add=True)
     gem_id = models.PositiveSmallIntegerField()
-    hackernews_username = models.CharField(max_length=100),
-    discord_username = models.CharField(max_length=100),
-    wallet_address = models.CharField(max_length=100),
+    hackernews_username = models.CharField(max_length=100)
+    discord_username = models.CharField(max_length=100)
+    wallet_address = models.CharField(max_length=100)
     message_payload = models.JSONField() # JSONField uses jsonb
 
