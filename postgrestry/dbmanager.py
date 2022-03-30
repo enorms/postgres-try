@@ -33,14 +33,14 @@ def query_discord_username(username):
     """Given a username
     return true if associated with a record containing a gem_id
     
+    Example of code return if not found:
+        postgrestry.models.Sign.DoesNotExist: Sign matching query does not exist.
     """
-    res = all.get(hackernews_username=username) # Sign object
 
     try: 
-        res = all.get(hackernews_username="hn_un4")
+        res = all.get(hackernews_username=username)
         print("found, gem id:", res.gem_id) # debug
         return True
-    # postgrestry.models.Sign.DoesNotExist: Sign matching query does not exist.
     except: 
         print("not found")    # debug
         return False
