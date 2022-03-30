@@ -88,3 +88,27 @@ heroku pg:reset DATABASE
 ```
 
 - [Python on Heroku](https://devcenter.heroku.com/categories/python)
+
+
+
+# Scratch
+
+add an entry
+(venv) e@en-mbp-14 postgres-try % heroku run python manage.py shell
+ ›   Warning: heroku update available from 7.59.4 to 7.60.0.
+Running python manage.py shell on ⬢ immense-bayou-67118... up, run.9884 (Free)
+Python 3.10.4 (main, Mar 24 2022, 11:40:21) [GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from simple.models import MySimpleModel
+>>> first_entry = MySimpleModel(col="col_name")
+>>> first_entry.save()
+>>> res = MySimpleModel.get(pk=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'MySimpleModel' has no attribute 'get'
+>>> res = MySimpleModel.objects.get(pk=1)
+>>> res
+<MySimpleModel: MySimpleModel object (1)>
+>>> res.col
+'col_name'

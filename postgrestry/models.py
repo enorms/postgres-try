@@ -6,7 +6,7 @@ from django.db import models
 
 # https://docs.djangoproject.com/en/4.0/ref/models/fields/
 # https://www.postgresql.org/docs/8.1/datatype.html
-class Greeting(models.Model):
+class Sign(models.Model):
     id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False),
     created_at = models.DateTimeField(auto_now_add=True)
     gem_id = models.PositiveSmallIntegerField()

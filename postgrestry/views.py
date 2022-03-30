@@ -3,7 +3,7 @@ import requests
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
+from .models import Sign
 
 # Create your views here.
 def index(request):
@@ -13,9 +13,9 @@ def index(request):
 
 def db(request):
 
-    greeting = Greeting()
-    greeting.save()
+    sign = Sign()
+    sign.save()
 
-    greetings = Greeting.objects.all()
+    sign = Sign.objects.all()
 
-    return render(request, "db.html", {"greetings": greetings})
+    return render(request, "db.html", {"sign": sign})
