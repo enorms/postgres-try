@@ -26,15 +26,17 @@ def db(request):
     return render(request, "db.html", {"signs": signs})
     
 
-def db_with_param(request, username):
+def username(request, username):
     """
+    called from URLS with param passed
+    runs code, then sends output to html template with vars
     test whether we can call this via API
     """
     print("db_with_param(), username:", username) # debug
     
-    res = query_discord_username(username)
-    
-    print(res) # debug
+    result = query_discord_username(username)
 
-    return render(request, "username.html", {"found": res})
+    print(result) # debug
+
+    return render(request, "username.html", {"result": result})
     

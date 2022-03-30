@@ -17,6 +17,6 @@ import postgrestry.views
 urlpatterns = [
     path("", postgrestry.views.index, name="index"),
     path("db/", postgrestry.views.db, name="db"),
-    path("db/<str:username>", postgrestry.views.db_with_param, name = "verify_discord_username"),
+    path("db/<str:username>", postgrestry.views.username, name = "username"),
     path("admin/", admin.site.urls),
 ]
