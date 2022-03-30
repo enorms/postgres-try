@@ -5,13 +5,13 @@
   <div class="container">
 
 
-<h2>Page View Report</h2>
+<h2>Signed</h2>
 
 
 <ul>
 
-{% for greeting in greetings %}
-    <li>{{ greeting.id }}, {{ greeting.when }}, {{ greeting.hackernews_username }} </li>
+{% for s in sign %}
+    <li>{{ s.id }}, {{ s.when }}, {{ s.hackernews_username }} </li>
 {% endfor %}
 
 </ul>
