@@ -94,6 +94,7 @@ heroku pg:reset DATABASE
 # Scratch
 
 add an entry
+```sh
 (venv) e@en-mbp-14 postgres-try % heroku run python manage.py shell
  ›   Warning: heroku update available from 7.59.4 to 7.60.0.
 Running python manage.py shell on ⬢ immense-bayou-67118... up, run.9884 (Free)
@@ -112,3 +113,11 @@ AttributeError: type object 'MySimpleModel' has no attribute 'get'
 <MySimpleModel: MySimpleModel object (1)>
 >>> res.col
 'col_name'
+```
+
+may need to stop old shell
+```sh
+heroku ps
+# get PID
+heroku ps:stop run.<number>
+```
